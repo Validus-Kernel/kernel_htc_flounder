@@ -347,6 +347,15 @@ config ARMV7_COMPAT_CPUINFO
 
 	 If you want to execute ARMv7 applications, say Y
 
+config SYS_SUPPORTS_HUGETLBFS
+	def_bool y
+
+config ARCH_WANT_GENERAL_HUGETLB
+	def_bool y
+
+config ARCH_WANT_HUGE_PMD_SHARE
+	def_bool y if !ARM64_64K_PAGES
+
 source "mm/Kconfig"
 
 config SECCOMP
