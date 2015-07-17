@@ -24,7 +24,7 @@
 
 extern int s2w_switch;
 extern int s2w_switch_temp;
-extern bool dt2w_switch;
+extern int dt2w_switch;
 bool scr_suspended(void);
 bool get_internal_dt(void);
 void set_internal_dt(bool input);
