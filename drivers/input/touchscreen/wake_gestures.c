@@ -37,7 +37,6 @@
 /* Tuneables */
 #define WG_DEBUG		0
 #define WG_DEFAULT		0
-#define S2W_DEFAULT		15
 #define S2S_DEFAULT		1
 #define WG_PWRKEY_DUR           60
 
@@ -77,7 +76,8 @@ static struct input_dev *gesture_dev;
 #endif
 
 /* Resources */
-int s2w_switch = S2W_DEFAULT;
+int s2w_switch = 1;
+int dt2w_switch = 0;
 int s2w_switch_temp;
 bool dt2w_switch;
 static int s2s_switch = S2S_DEFAULT;
