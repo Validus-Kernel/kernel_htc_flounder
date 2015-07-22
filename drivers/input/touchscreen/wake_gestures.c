@@ -37,7 +37,6 @@
 /* Tuneables */
 #define WG_DEBUG		0
 #define WG_DEFAULT		0
-#define S2S_DEFAULT		1
 #define WG_PWRKEY_DUR           60
 
 /* flounder */
@@ -76,10 +75,10 @@ static struct input_dev *gesture_dev;
 #endif
 
 /* Resources */
-int s2w_switch = 1;
+int s2w_switch = 0;
 int dt2w_switch = 0;
 int s2w_switch_temp;
-static int s2s_switch = S2S_DEFAULT;
+static int s2s_switch = 0;
 static int touch_x = 0, touch_y = 0;
 static bool touch_x_called = false, touch_y_called = false;
 static bool exec_countx = true, exec_county = true, exec_count = true;
