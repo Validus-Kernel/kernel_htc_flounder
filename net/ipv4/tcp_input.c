@@ -3367,6 +3367,7 @@ static int tcp_ack(struct sock *sk, const struct sk_buff *skb, int flag)
 	int prior_packets = tp->packets_out;
 	int prior_sacked = tp->sacked_out;
 	int pkts_acked = 0;
+	int acked = 0; /* Number of packets newly acked */
 	int previous_packets_out = 0;
 
 	/* If the ack is older than previous acks
@@ -3456,7 +3457,7 @@ static int tcp_ack(struct sock *sk, const struct sk_buff *skb, int flag)
 				      prior_packets, is_dupack, flag);
 	} else {
 		if (flag & FLAG_DATA_ACKED)
-			tcp_cong_avoid(sk, ack, prior_in_flight);
+			tcp_cong_avoid(sk, ack, acked, prior_in_flight);
 	}
 
 	if (tp->tlp_high_seq)
